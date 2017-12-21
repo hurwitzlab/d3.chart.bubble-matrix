@@ -5,5 +5,5 @@
   text-anchor: end;
 }
 .d3-chart-bubble-matrix .col-header text {
-  text-anchor: middle;
+  text-anchor: start;
 }
