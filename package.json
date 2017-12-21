@@ -23,7 +23,7 @@
     "LICENSE",
     "src",
     "vendor",
-    "*.css"
+    "dist"
   ],
   "main": "src/chart.js",
   "d3.chart": {
