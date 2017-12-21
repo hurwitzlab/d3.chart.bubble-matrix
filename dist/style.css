@@ -1,0 +1,9 @@
+.d3-chart-bubble-matrix .thread {
+  shape-rendering: crispEdges;
+}
+.d3-chart-bubble-matrix .row-header text {
+  text-anchor: end;
+}
+.d3-chart-bubble-matrix .col-header text {
+  text-anchor: middle;
+}
