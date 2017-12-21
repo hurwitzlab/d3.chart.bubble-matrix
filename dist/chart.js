@@ -26716,7 +26716,7 @@ var Chart = d3.chart('BaseChart').extend(CHART_NAME, {
         this.xScale.rangePoints([left, right], HZ_PADDING);
         this.yScale.rangePoints([0, bottom], VT_PADDING);
         var padding = this._ruler.extentOfChar('W').height;
-        this.bottomMargin = bottom + padding * 1.3;
+        this.bottomMargin = bottom;// + padding * 1.3;
         delta = (this.xScale(1)) - (this.xScale(0));
         this.maxRadius = delta * (1 - RADIUS_PADDING) / 2;
         this.radiusScale.range([0, this.maxRadius]);
@@ -26743,7 +26743,7 @@ var Chart = d3.chart('BaseChart').extend(CHART_NAME, {
         var maxLen = 2;
         if (this._slanted)
             maxLen = Math.max.apply(null, data.map(s => { return s.length }));
-        return height - maxLen * this._ruler.extentOfChar('W').height;
+        return height - maxLen * this._ruler.extentOfChar('W').height / 1.95;
     },
 
     rows: makeProp('_rows'),
@@ -26891,7 +26891,7 @@ function transformCol(sel, chart) {
         var result;
         result = 'translate(' + (chart.xScale(i)) + ',' + bottom + ')';
         if (slanted) {
-            result += 'rotate(45)';
+            result += 'rotate(90)';
         }
         return result;
     });
