@@ -23,6 +23,9 @@ function transformCol(sel, chart) {
         }
         return result;
     });
+    if (slanted) {
+        sel.attr('text-anchor', 'start');
+    }
 }
 
 layer.events['enter'] = function () {
