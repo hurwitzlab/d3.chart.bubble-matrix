@@ -96,7 +96,10 @@ var Chart = d3.chart('BaseChart').extend(CHART_NAME, {
     },
 
     _getMaxBottom: function (data, height) {
-        return height - 2 * this._ruler.extentOfChar('W').height;
+        var maxLen = 2;
+        if (this._slanted)
+            maxLen = Math.max.apply(null, data.map(s => { return s.length }));
+        return height - maxLen * this._ruler.extentOfChar('W').height;
     },
 
     rows: makeProp('_rows'),
